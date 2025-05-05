@@ -1,0 +1,7 @@
+.button{
+    background-color: #4CAF50; /* Green */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+}
