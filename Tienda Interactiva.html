@@ -3,29 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tienda Interactiva</title>
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link href="Sryles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Styles.css">
   </head>
-  <body>
-    <main div class="container">
-      <h1 class="text-center">Tienda Interactiva</h1>
-        <select name="productos" id="productos" class="form-select" multiple aria-label="Multiple select example">
-          <option value="" disabled selected>Selecciona un producto</option>
-          <option value="1">Calzado</option>
-          <option value="2">Camisas</option>
-          <option value="3">Pantalones</option>
-        </select>
-        <div class="card">
-          <div class="card-body">
-            Pantalones
-          </div>
+  <body onload=" init()">
+    <div class="container">
+    <h1>Tienda interactiva</h1>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Selecciona una categoria</option>
+        <option value="1">Ropa</option>
+        <option value="2">Calzado</option>
+        <option value="3">Joyas</option>
+      </select>
+      <div class="card" >
+        <div class="card-body">
+          <div id="productos"></div>
         </div>
-        <button type="button" class="button">
-          Boton de compra
-
-        </button>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  </body>
+      </div>
+      <button type="button" class="boton btn btn-danger">Mostrar</button>
+      <div id="carrito">
+        
+      </div>
+      
+    </div>
+    <script src="./App.js"></script>
+</body>
 </html>
