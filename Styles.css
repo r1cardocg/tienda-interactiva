@@ -1,7 +1,21 @@
-.button{
-    background-color: #4CAF50; /* Green */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 15px 32px; /* Some padding */
-    text-align: center; /* Centered text */
+:root {
+  --bs-primary: #6d4c41;      /* Marrón oscuro */
+  --bs-danger: #d84315;       /* Rojo intenso */
+  --bs-light: #f5f5f5;
+}
+
+body {
+  background-color: var(--bs-light);
+}
+
+.card-producto {
+  transition: transform 0.2s, box-shadow 0.9s;
+}
+
+.card-producto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  border: 1px solid var(--bs-primary);
+  border-radius: 30px;
 }

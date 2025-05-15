@@ -1,32 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Tienda Interactiva</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Styles.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./styles.css">
   </head>
-  <body onload=" init()">
-    <div class="container">
-    <h1>Tienda interactiva</h1>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Selecciona una categoria</option>
-        <option value="1">Ropa</option>
-        <option value="2">Calzado</option>
-        <option value="3">Joyas</option>
-      </select>
-      <div class="card" >
-        <div class="card-body">
-          <div id="productos"></div>
+
+<!-- Cuerpo de la página -->
+  <body onload="init()">
+    <!-- HEADER -->
+    <header class="bg-primary text-white py-1 mb-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="mb-4">Tienda Interactiva</h1>
+        <!-- Badge clicable para ver carrito -->
+        <div id="contador-carrito" class="badge bg-danger" style="cursor:pointer" onclick="mostrarCarrito()">
+          Carrito: 0
         </div>
       </div>
-      <button type="button" class="boton btn btn-danger">Mostrar</button>
-      <div id="carrito">
-        
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <!-- CATEGORY SELECT -->
+      <form id="category-form" class="mb-4" onsubmit="return false;">
+        <div class="input-group">
+          <label class="input-group-text" for="categoria">Categoría</label>
+          <select id="categoria" class="form-select" onchange="filtrarCategoria()" aria-label="Selecciona una categoría">
+            <option value="" selected>-- Elige una categoría (todos) --</option>
+            <option value="ropa">Ropa</option>
+            <option value="calzado">Calzado</option>
+            <option value="joyas">Joyas</option>
+          </select>
+        </div>
+      </form>
+
+      <!-- PRODUCTS GRID -->
+      <section id="productos" class="row gy-4">
+        <!-- JS inyectará tarjetas aquí -->
+      </section>
+
+      <!-- CART DISPLAY -->
+      <div id="carrito" class="mt-5">
+        <!-- Contenido del carrito -->
       </div>
-      
-    </div>
+    </main>
+
+    <!-- Bootstrap JS + App Script -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XxQKCeJkqeNqhzo5i+IK+9SBJmW1uAzlRjzVk7LPgUoDoEbxzYj1A+mSH1Ll3HpN" crossorigin="anonymous"></script>-->
     <script src="./App.js"></script>
-</body>
+  </body>
 </html>
